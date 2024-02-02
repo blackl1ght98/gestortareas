@@ -14,13 +14,12 @@
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
-<body>
+<body [ngClass]="{ 'dark-mode': isDarkMode }">
   <app-root></app-root>
-  <footer class="bg-light p-3 text-center">
-    <h3>Redes sociales</h3>
+  <footer class="bg-dark p-3 text-center ">
+    <h3 class="redes">Redes sociales</h3>
     <a href="https://github.com/blackl1ght98" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
     <a href="https://www.linkedin.com/in/guillermo-fuentes-buenosvinos/" target="_blank" rel="noopener noreferrer"><i
         class="bi bi-linkedin"></i></a>

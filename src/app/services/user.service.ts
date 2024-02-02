@@ -6,12 +6,13 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from '@angular/fire/auth';
+import { MessageService } from './message.service.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private auth: Auth) {}
+  constructor(private auth: Auth, private messageService: MessageService) {}
 
   /**
    * Registra un nuevo usuario utilizando su correo electrónico y contraseña.
@@ -32,7 +33,12 @@ export class UserService {
   login({ email, password }: any) {
     return signInWithEmailAndPassword(this.auth, email, password)
       .then((userCredential) => {
-        // Inicio de sesión exitoso, devolvemos el objeto UserCredential.
+        // Inicio de sesión exitoso, enviar mensaje de bienvenida
+        const userEmail = userCredential.user.email;
+
+        userEmail && sessionStorage.setItem('userEmail', userEmail);
+
+        this.messageService.sendWelcomeMessage(`¡Bienvenido, ${userEmail}!`);
         return userCredential;
       })
       .catch((error) => {
@@ -46,6 +52,8 @@ export class UserService {
    * @returns Una promesa que se resuelve cuando el usuario cierra la sesión.
    */
   logout() {
+    sessionStorage.removeItem('userEmail'); // Elimina la propiedad 'userEmail' del objeto 'sessionStorage'.
+
     return signOut(this.auth);
   }
 

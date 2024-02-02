@@ -1,8 +1,10 @@
 .realizada {
   background-color: lightsalmon;
+  color: black;
 }
 .en_progreso {
-  background-color: bisque;
+  background-color: red;
+  color: black;
 }
 .boton {
   display: flex;

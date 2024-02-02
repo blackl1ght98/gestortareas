@@ -1,2 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
-@import "~bootstrap-icons/font/bootstrap-icons.css";
+/* app.component.css (o tu archivo CSS principal) */
+body.dark-mode {
+  background-color: #333333;
+  color: #ffffff; /* Color de texto blanco para modo oscuro */
+  letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
+  line-height: 1.5; /* Ajusta la altura de línea para mejorar la legibilidad */
+}
+
+/* Si prefieres evitar sombras y contornos */
+/* body.dark-mode a, body.dark-mode button {
+  color: #ffffff;
+} */
+
+/* Opcional: Para agregar sombras y contornos */
+body.dark-mode a,
+body.dark-mode button {
+  color: #ffffff; /* Color de texto blanco para modo oscuro en enlaces y botones */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra para mejorar la visibilidad */
+  /* Otros estilos según sea necesario */
+}
+
+/* O ajusta directamente en los elementos específicos (por ejemplo, nav-bar.component.css) */
+/* .dark-mode {
+  background-color: #333333;
+} */
+
+/* .dark-mode a, .dark-mode button {
+  color: #ffffff;
+} */
+.redes {
+  color: white;
+}
