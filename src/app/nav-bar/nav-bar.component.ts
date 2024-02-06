@@ -34,5 +34,7 @@ export class NavBarComponent implements OnInit {
       // Borra el mensaje de bienvenida cuando el usuario cierra la sesión
       this.messageService.sendWelcomeMessage('');
     });
+    localStorage.clear();
+    sessionStorage.clear();
   }
 }

@@ -52,8 +52,8 @@ export class UserService {
    * @returns Una promesa que se resuelve cuando el usuario cierra la sesión.
    */
   logout() {
-    sessionStorage.removeItem('userEmail'); // Elimina la propiedad 'userEmail' del objeto 'sessionStorage'.
-
+    localStorage.clear();
+    sessionStorage.clear();
     return signOut(this.auth);
   }
 
